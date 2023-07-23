@@ -9,3 +9,19 @@ function getComputerChoice(){
     console.log(randomChoice)
 }
 getComputerChoice();
+
+function getPlayerChoice(){
+    let playerChoice = prompt("Rock, paper, or scissors?");
+    playerChoice = playerChoice.toLowerCase();
+    if (playerChoice == 'rock' || playerChoice == 'paper' || playerChoice == 'scissors'){
+        alert("You chose " + playerChoice + ".")
+        console.log(playerChoice);}
+    else{
+            alert("Please enter a valid choice.");
+            return;
+        }
+
+    }
+
+
+getPlayerChoice();
