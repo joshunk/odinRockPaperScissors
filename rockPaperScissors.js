@@ -2,26 +2,39 @@
 // change the case to lowercase to pass through the program
 // Generate a value of rock, paper, or scissors from the computer
 
+
+
+function playRound(){
+    var computerChoice;
+    var playerChoice;
 // This creates an array and chooses a value based on a num between 0-1 (Math.random) multiplied by the number of items in the array (choices.length) then rounded down via the Math.floor 
 function getComputerChoice(){
+    const choices = ['rock', 'paper', 'scissors'];
+    computerChoice = choices[Math.floor(Math.random() * choices.length)];
+    console.log(computerChoice)
+    return computerChoice;
 }
 getComputerChoice();
 
 function getPlayerChoice(){
-    let choices = ['rock', 'paper', 'scissors'];
-    const computerChoice = choices[Math.floor(Math.random() * choices.length)];
-    console.log(computerChoice)
-
-    let playerChoice = prompt("Rock, paper, or scissors?");
+    playerChoice = prompt("Rock, paper, or scissors?");
     playerChoice = playerChoice.toLowerCase();
     if (playerChoice == 'rock' || playerChoice == 'paper' || playerChoice == 'scissors'){
         // alert("You chose " + playerChoice + ".")
-        console.log(playerChoice);}
+        console.log(playerChoice);
+        return playerChoice;
+    }
     else{
             alert("Please enter a valid choice.");
             return;
         }
-     
+    }
+getPlayerChoice();
+
+console.log("Player chose " + playerChoice);
+console.log("Computer chose " + computerChoice);
+
+function gameLogic(){
     // Build comparators for playerChoice rock
     if (playerChoice == 'rock' && computerChoice == 'scissors'){
         console.log("Rock beats scissors, you win!");
@@ -62,8 +75,10 @@ function getPlayerChoice(){
         // add a tie++ for a tie counter
     }
 }
+gameLogic();
+}
 
-getPlayerChoice();
+playRound();
 
 // function playRound(){
 //     }
