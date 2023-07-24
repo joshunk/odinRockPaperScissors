@@ -24,14 +24,40 @@ function getPlayerChoice(){
      
     // Build comparators for playerChoice rock
     if (playerChoice == 'rock' && computerChoice == 'scissors'){
-        console.log("Rock beats paper, you win!");
+        console.log("Rock beats scissors, you win!");
         // add a score++ here for the player
     }
     else if(playerChoice == 'rock' && computerChoice == 'paper'){
         console.log("Paper beats rock, you lose.");
         // add a score++ here for the computer
     }
-    else{
+    else if(playerChoice == 'rock' && computerChoice == 'paper'){
+        console.log("It's a tie!")
+        // add a tie++ for a tie counter
+    }
+    // Build comparators for playerChoice scissors
+    if (playerChoice == 'scissors' && computerChoice == 'paper'){
+        console.log("Scissors beats paper, you win!");
+        // add a score++ here for the player
+    }
+    else if(playerChoice == 'scissors' && computerChoice == 'rock'){
+        console.log("Rock beats scissors, you lose.");
+        // add a score++ here for the computer
+    }
+    else if(playerChoice == 'scissors' && computerChoice == 'scissors'){
+        console.log("It's a tie!")
+        // add a tie++ for a tie counter
+    }
+    // Build comparators for playerChoice paper
+    if (playerChoice == 'paper' && computerChoice == 'rock'){
+        console.log("Paper beats rock, you win!");
+        // add a score++ here for the player
+    }
+    else if(playerChoice == 'paper' && computerChoice == 'scissors'){
+        console.log("Scissors beats paper, you lose.");
+        // add a score++ here for the computer
+    }
+    else if(playerChoice == 'paper' && computerChoice == 'paper'){
         console.log("It's a tie!")
         // add a tie++ for a tie counter
     }
