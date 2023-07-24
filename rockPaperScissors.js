@@ -99,8 +99,3 @@ console.log("Computer score: " + computerScore);
 console.log("Tie rounds: " + tieCounter);
 }
 game();
-// playRound();
-
-// function playRound(){
-//     }
-// }
