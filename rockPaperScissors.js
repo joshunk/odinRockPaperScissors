@@ -11,22 +11,31 @@ function getPlayerChoice(){
     let choices = ['rock', 'paper', 'scissors'];
     const computerChoice = choices[Math.floor(Math.random() * choices.length)];
     console.log(computerChoice)
-    
+
     let playerChoice = prompt("Rock, paper, or scissors?");
     playerChoice = playerChoice.toLowerCase();
     if (playerChoice == 'rock' || playerChoice == 'paper' || playerChoice == 'scissors'){
-        alert("You chose " + playerChoice + ".")
+        // alert("You chose " + playerChoice + ".")
         console.log(playerChoice);}
     else{
             alert("Please enter a valid choice.");
             return;
         }
-        
-    if (playerChoice == 'rock' && computerChoice == 'rock'){
+     
+    // Build comparators for playerChoice rock
+    if (playerChoice == 'rock' && computerChoice == 'scissors'){
+        console.log("Rock beats paper, you win!");
+        // add a score++ here for the player
+    }
+    else if(playerChoice == 'rock' && computerChoice == 'paper'){
+        console.log("Paper beats rock, you lose.");
+        // add a score++ here for the computer
+    }
+    else{
         console.log("It's a tie!")
+        // add a tie++ for a tie counter
     }
-    }
-
+}
 
 getPlayerChoice();
 
