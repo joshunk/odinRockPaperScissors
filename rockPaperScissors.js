@@ -2,47 +2,63 @@
 // change the case to lowercase to pass through the program
 // Generate a value of rock, paper, or scissors from the computer
 
-function game(){
-    var playerScore = 0;
-    var computerScore = 0;
-    var tieCounter = 0;
 
-    for(i = 0; i < 5; i++){
-        playRound(i);
-    }
-    
-    
-    function playRound(){
-        var computerChoice;
-    var playerChoice;
+// document.getElementById('rockBTN').onclick = function(){
+//     const playerChoice = 'rock'
+//     console.log(playerChoice);
+//     game();
+//     return playerChoice;
+ 
+// }
+// document.getElementById('paperBTN').onclick = function(){
+//     const playerChoice = 'paper'
+//     console.log(playerChoice);
+// }
+// document.getElementById('scissorsBTN').onclick = function(){
+//     const playerChoice = 'scissors'
+//     console.log(playerChoice);
+
+// }
+
+
+let playerScore = 0;
+let computerScore = 0;
+let tieCounter = 0;  
+let playerChoice;
+// let computerChoice;
+
 // This creates an array and chooses a value based on a num between 0-1 (Math.random) multiplied by the number of items in the array (choices.length) then rounded down via the Math.floor 
-function getComputerChoice(){
-    const choices = ['rock', 'paper', 'scissors'];
-    computerChoice = choices[Math.floor(Math.random() * choices.length)];
-    // console.log(computerChoice)
-    return computerChoice;
-}
-getComputerChoice();
-
-function getPlayerChoice(){
-    playerChoice = prompt("Rock, paper, or scissors?");
-    playerChoice = playerChoice.toLowerCase();
-    if (playerChoice == 'rock' || playerChoice == 'paper' || playerChoice == 'scissors'){
-        // alert("You chose " + playerChoice + ".")
-        // console.log(playerChoice);
-        return playerChoice;
-    }
-    else{
-            alert("Please enter a valid choice.");
-            return;
+    function getComputerChoice(){
+        const choices = ['rock', 'paper', 'scissors'];
+        computerChoice = choices[Math.floor(Math.random() * choices.length)];
+        // console.log(computerChoice)
+        console.log("Computer chose " + computerChoice);
+            return computerChoice;
         }
-    }
-getPlayerChoice();
+// getComputerChoice();
+    // console.log("Computer chose " + computerChoice);
 
-console.log("Player chose " + playerChoice);
-console.log("Computer chose " + computerChoice);
+    rockBTN.addEventListener("click", function () {
+        const playerChoice = "rock";
+        getComputerChoice();
+        playRound(playerChoice); 
+        });
+        
+    paperBTN.addEventListener("click", function () {
+        const playerChoice = "paper";
+        getComputerChoice();
+        playRound(playerChoice); 
+        });
+    
+        scissorsBTN.addEventListener("click", function () {
+        const playerChoice = "scissors";
+        getComputerChoice();
+        playRound(playerChoice); 
+        });
+// console.log("Computer chose " + computerChoice);
 
-function gameLogic(){
+
+function playRound(playerChoice){
     // Build comparators for playerChoice rock
     if (playerChoice == 'rock' && computerChoice == 'scissors'){
         console.log("Rock beats scissors, you win!");
@@ -91,11 +107,21 @@ function gameLogic(){
         // add a tie++ for a tie counter
         tieCounter++;
     }
+    const playerScoreCount = document.getElementById('playerScoreCount')
+    playerScoreCount.textContent = "Player score: " + playerScore;
+    
+    const computerrScoreCount = document.getElementById('computerScoreCount')
+    computerScoreCount.textContent = "Computer score: " + computerScore;
+    
+    const tieCount = document.getElementById('tieScoreCount')
+    tieCount.textContent = "Tie rounds: " + tieCounter;
 }
-gameLogic();
-}
-console.log("Player score: " + playerScore);
-console.log("Computer score: " + computerScore);
-console.log("Tie rounds: " + tieCounter);
-}
-game();
+// playRound();
+// gameLogic();
+
+// console.log("Player score: " + playerScore);
+// console.log("Computer score: " + computerScore);
+// console.log("Tie rounds: " + tieCounter);
+
+
+
